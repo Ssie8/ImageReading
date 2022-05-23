@@ -19,6 +19,6 @@ if uploaded_file:
     prediction = reader.readtext(numpydata, detail = 0)
     st.text(f'Predictions: {prediction}')
     
-  for eachline in prediction:
-    mytext = mytext+eachline
-  st.text(mytext)
+    for eachline in prediction:
+      mytext = mytext+eachline
+    st.text(mytext)
