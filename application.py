@@ -17,8 +17,5 @@ if uploaded_file:
   
   if pred_button:
     prediction = reader.readtext(numpydata, detail = 0)
-    st.text(f'Predictions: {prediction}')
-    
-    for eachline in prediction:
-      mytext = mytext+eachline
-    st.text(mytext)
+    prediction_2 = ' '.join(prediction)
+    st.text(f'Text inside image: {prediction_2}')
