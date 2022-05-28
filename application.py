@@ -19,3 +19,8 @@ if uploaded_file:
     prediction = reader.readtext(numpydata, detail = 0)
     prediction_2 = ' '.join(prediction)
     st.text(f'Text inside image: {prediction_2}')
+    tts = gTTS(text=prediction)
+    tts.save('audio.mp3')
+    audio_file = open('audio.mp3', 'rb')
+    audio_bytes = audio_file.read()
+    st.audio(audio_bytes)
