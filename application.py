@@ -1,5 +1,6 @@
 import streamlit as st
 import easyocr
+from gtts import gTTS
 from PIL import Image
 from numpy import asarray
 
@@ -19,7 +20,7 @@ if uploaded_file:
     prediction = reader.readtext(numpydata, detail = 0)
     prediction_2 = ' '.join(prediction)
     st.text(f'Text inside image: {prediction_2}')
-    tts = gTTS(text='hello Dexter')
+    tts = gTTS(text=prediction_2)
     tts.save('audio.mp3')
     audio_file = open('audio.mp3', 'rb')
     audio_bytes = audio_file.read()
