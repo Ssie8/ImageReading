@@ -32,3 +32,8 @@ if uploaded_file:
     st.header('Translated to Italian')
     it_result = translator.translate(prediction_2, dest='it')
     st.text(it_result.text)
+    tts = gTTS(text=it_result.text, lang='it')
+    tts.save('it_audio.mp3')
+    audio_file = open('it_audio.mp3', 'rb')
+    audio_bytes = audio_file.read()
+    st.audio(audio_bytes)
