@@ -1,3 +1,4 @@
 easyocr
 numpy
 gTTS
+googletrans
