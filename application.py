@@ -5,6 +5,8 @@ from PIL import Image
 from numpy import asarray
 
 st.title('Read Image')
+with st.expander("ℹ️ - About this app", expanded=True):
+  st.write("This App can read text inside of images")
 reader = easyocr.Reader(['en'])
 uploaded_file = st.file_uploader("Upload Image", type=['jpg', 'jpeg', 'png'])
 
