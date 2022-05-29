@@ -3,12 +3,14 @@ import easyocr
 from gtts import gTTS
 from PIL import Image
 from numpy import asarray
+from googletrans import Translator
 
 st.title('Read Image')
 with st.expander("ℹ️ - About this app", expanded=True):
   st.write("This App can read text inside of images")
 reader = easyocr.Reader(['en'])
 uploaded_file = st.file_uploader("Upload Image", type=['jpg', 'jpeg', 'png'])
+translator = Translator()
 
 if uploaded_file:
   # display the file
@@ -27,3 +29,6 @@ if uploaded_file:
     audio_file = open('audio.mp3', 'rb')
     audio_bytes = audio_file.read()
     st.audio(audio_bytes)
+    st.header('Translated to Italian')
+    it_result = translator.translate(prediction_2, dest='it')
+    st.text(it_result.text)
