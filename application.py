@@ -6,9 +6,9 @@ from PIL import Image
 from numpy import asarray
 from googletrans import Translator
 
-st.title('Read Image')
+st.title('Image Reading')
 with st.expander("ℹ️ - About this app", expanded=True):
-  st.write("This App can read text inside of images")
+  st.write("This App can read english text inside of images and translate it to italian. Please upload an image")
 reader = easyocr.Reader(['en'])
 uploaded_file = st.file_uploader("Upload Image", type=['jpg', 'jpeg', 'png'])
 translator = Translator()
