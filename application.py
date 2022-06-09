@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 from gtts import gTTS
 import easyocr
 from PIL import Image
@@ -8,13 +7,13 @@ from googletrans import Translator
 
 st.title('Image Reading')
 with st.expander("ℹ️ - About this app", expanded=True):
-  st.write("This App can read english text inside of images and translate it to italian. Please upload an image")
+  st.write("This App can read english text inside of images and translate it to italian. Fist upload an imagine. After that click on play to read it")
 reader = easyocr.Reader(['en'])
 uploaded_file = st.file_uploader("Upload Image", type=['jpg', 'jpeg', 'png'])
 translator = Translator()
 
 if uploaded_file:
-    # display the file
+    # display the fileg
     display_image = Image.open(uploaded_file)
     numpydata = asarray(display_image)
     display_image = display_image.resize((500,300))
