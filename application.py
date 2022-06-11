@@ -7,7 +7,7 @@ from googletrans import Translator
 
 st.title('Image Reading')
 with st.expander("ℹ️ - About this app", expanded=True):
-  st.write("This App can read english text inside of images and translate it to italian. Fist upload an imagine. After that click on play to read it")
+  st.write("This App can read english text inside of images and translate it to italian. Fist upload an imagine (Browse file). After that click on "read image", wait a bit and click play to read it")
 reader = easyocr.Reader(['en'])
 uploaded_file = st.file_uploader("Upload Image", type=['jpg', 'jpeg', 'png'])
 translator = Translator()
